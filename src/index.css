@@ -1,42 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Wildiner Auto - Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Automotive Brand Colors */
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Racing Red Primary */
+    --primary: 0 85% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 0 85% 60%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Charcoal Secondary */
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted Grays */
+    --muted: 0 0% 16%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Chrome Accent */
+    --accent: 0 0% 85%;
+    --accent-foreground: 0 0% 10%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 85% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 25%;
+    --input: 0 0% 20%;
+    --ring: 0 85% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom Automotive Colors */
+    --engine-red: 0 85% 45%;
+    --chrome: 0 0% 85%;
+    --steel: 220 15% 25%;
+    --carbon: 0 0% 8%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--carbon)), hsl(var(--steel)));
+    --gradient-engine: linear-gradient(45deg, hsl(var(--engine-red)), hsl(var(--primary-glow)));
+    --gradient-chrome: linear-gradient(135deg, hsl(var(--chrome)), hsl(240 10% 75%));
+    
+    /* Shadows */
+    --shadow-red-glow: 0 0 40px hsl(var(--primary) / 0.4);
+    --shadow-intense: 0 20px 60px -15px hsl(0 0% 0% / 0.8);
+    --shadow-chrome: 0 8px 25px -5px hsl(var(--chrome) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-engine: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +126,57 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-rajdhani;
+  }
+}
+
+@layer components {
+  /* Engine Animation */
+  .engine-pulse {
+    animation: engine-pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes engine-pulse {
+    0%, 100% { 
+      filter: drop-shadow(var(--shadow-red-glow));
+      transform: scale(1);
+    }
+    50% { 
+      filter: drop-shadow(0 0 60px hsl(var(--primary) / 0.6));
+      transform: scale(1.02);
+    }
+  }
+
+  /* Chrome shine effect */
+  .chrome-shine {
+    background: var(--gradient-chrome);
+    background-size: 200% 200%;
+    animation: chrome-shine 3s ease-in-out infinite;
+  }
+  
+  @keyframes chrome-shine {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Racing stripes */
+  .racing-stripes {
+    position: relative;
+  }
+  
+  .racing-stripes::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: hsl(var(--primary));
+    transform: translateX(-50%);
+    box-shadow: 
+      -10px 0 0 hsl(var(--carbon)),
+      10px 0 0 hsl(var(--carbon)),
+      -12px 0 0 hsl(var(--primary)),
+      12px 0 0 hsl(var(--primary));
   }
 }
