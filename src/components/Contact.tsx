@@ -43,9 +43,9 @@ export const Contact = () => {
                   <div>
                     <h4 className="font-semibold mb-1">Endereço</h4>
                     <p className="text-muted-foreground">
-                      Rua das Oficinas, 123<br />
-                      Vila Mecânica - São Paulo, SP<br />
-                      CEP: 01234-567
+                      Rua Malaquias, 461<br />
+                      Bairro São José - Santana do Paraíso, MG<br />
+                      CEP: 35179-000
                     </p>
                   </div>
                 </div>
