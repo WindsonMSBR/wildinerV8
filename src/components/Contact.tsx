@@ -56,11 +56,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Horário de Funcionamento</h4>
-                    <div className="text-muted-foreground space-y-1">
-                      <p>Segunda a Sexta: 8h às 18h</p>
-                      <p>Sábado: 8h às 12h</p>
-                      <p>Domingo: Fechado</p>
-                    </div>
+                    
                   </div>
                 </div>
 
