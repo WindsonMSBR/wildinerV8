@@ -1,10 +1,8 @@
 import { Phone, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import wlLogo from "@/assets/wl-motors-logo.png";
-
 export const Header = () => {
-  return (
-    <header className="bg-card border-b border-border">
+  return <header className="bg-card border-b border-border">
       <div className="container mx-auto px-4">
         {/* Top Contact Bar */}
         <div className="py-2 text-sm text-muted-foreground border-b border-border">
@@ -12,15 +10,15 @@ export const Header = () => {
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
-                <span>(11) 9 8765-4321</span>
+                <span>(31) 73411640</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-primary" />
-                <span>São Paulo, SP</span>
+                <span>Santana do Paraíso - MG</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-primary" />
-                <span>Seg-Sex 8h-18h | Sáb 8h-12h</span>
+                <span>Seg-Sex 8h-18h</span>
               </div>
             </div>
           </div>
@@ -66,6 +64,5 @@ export const Header = () => {
           </div>
         </div>
       </div>
-    </header>
-  );
+    </header>;
 };
