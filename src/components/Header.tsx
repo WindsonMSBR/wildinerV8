@@ -10,7 +10,7 @@ export const Header = () => {
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
-                <span>(31) 73411640</span>
+                <span>(31) 7341-1640</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-primary" />
