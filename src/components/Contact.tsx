@@ -3,10 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, MapPin, Clock, Mail, MessageCircle } from "lucide-react";
-
 export const Contact = () => {
-  return (
-    <section id="contato" className="py-20 bg-card">
+  return <section id="contato" className="py-20 bg-card">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-orbitron font-bold text-4xl lg:text-5xl mb-4">
@@ -33,7 +31,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Telefone</h4>
-                    <p className="text-muted-foreground">(11) 9 8765-4321</p>
+                    <p className="text-muted-foreground">(31) 9 7341-1640</p>
                     <p className="text-sm text-muted-foreground">WhatsApp disponível</p>
                   </div>
                 </div>
@@ -139,10 +137,7 @@ export const Contact = () => {
                 
                 <div>
                   <label className="block text-sm font-medium mb-2">Mensagem</label>
-                  <Textarea 
-                    placeholder="Descreva o serviço que você precisa..."
-                    className="min-h-[120px]"
-                  />
+                  <Textarea placeholder="Descreva o serviço que você precisa..." className="min-h-[120px]" />
                 </div>
                 
                 <Button variant="racing" size="lg" className="w-full">
@@ -157,6 +152,5 @@ export const Contact = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
