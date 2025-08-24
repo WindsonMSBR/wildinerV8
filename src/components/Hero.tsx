@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Star, Wrench } from "lucide-react";
-import maverickHero from "@/assets/maverick-gt-hero.jpg";
+import maverickHero from "/lovable-uploads/728d8383-aa40-4bc5-b3e6-76562dd8e83d.png";
 import v8Engine from "@/assets/v8-engine.jpg";
 
 export const Hero = () => {
